@@ -1,22 +1,36 @@
 {
-    "name": "alemanski/module-api-logger",
-    "version": "1.0.0",
-    "description": "Module dedicated for logging all REST API requests to the file.",
-    "type": "magento2-module",
-    "require": {
-        "php": ">=7.4 || ^8.0",
-        "magento/framework": "*",
-        "magento/module-webapi": "100.3.*"
-    },
-    "license": [
-        "OSL-3.0"
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "ALemanski\\ApiLogger\\": ""
-        }
+  "name": "alemanski/module-api-logger",
+  "version": "0.1.0",
+  "description": "Module dedicated for logging all REST API requests to the file.",
+  "keywords": [
+    "magento2",
+    "api",
+    "logger"
+  ],
+  "authors": [
+    {
+      "name": "Artur Lemanski",
+      "homepage": "https://github.com/alemanski"
     }
+  ],
+  "homepage": "https://github.com/alemanski/api-logger",
+  "type": "magento2-module",
+  "require": {
+    "php": ">=7.4 || ^8.0",
+    "magento/framework": "*",
+    "magento/module-webapi": "100.3.*"
+  },
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/alemanski/api-logger/issues",
+    "source": "https://github.com/alemanski/api-logger"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "ALemanski\\ApiLogger\\": ""
+    }
+  }
 }
