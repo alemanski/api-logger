@@ -57,7 +57,7 @@ class RestApiLog
             'content' => $request->getContent()
         ];
 
-        $this->logger->info(serialize($requestData));
+        $this->logger->info(json_encode($requestData));
     }
 
 }
