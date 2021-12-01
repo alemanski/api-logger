@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Apply plugin to catch each REST API request. -->
+    <type name="Magento\Webapi\Controller\Rest">
+        <plugin name="catch-api-request" type="ALemanski\ApiLogger\Plugin\RestApiLog"/>
+    </type>
+
+    <!-- Define custom logger to write details about the request to defined file. -->
+    <virtualType name="RestApiRequestsLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="info" xsi:type="object">ALemanski\ApiLogger\Logger\Handler\ApiRequestsHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Apply custom logger to the plugin which catches API requests. -->
+    <type name="ALemanski\ApiLogger\Plugin\RestApiLog">
+        <arguments>
+            <argument name="logger" xsi:type="object">RestApiRequestsLogger</argument>
+        </arguments>
+    </type>
+</config>

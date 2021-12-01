@@ -1,0 +1,22 @@
+{
+    "name": "alemanski/module-api-logger",
+    "version": "1.0.0",
+    "description": "Module dedicated for logging all REST API requests to the file.",
+    "type": "magento2-module",
+    "require": {
+        "php": ">=7.4 || ^8.0",
+        "magento/framework": "*",
+        "magento/module-webapi": "100.3.*"
+    },
+    "license": [
+        "OSL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ALemanski\\ApiLogger\\": ""
+        }
+    }
+}
